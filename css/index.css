@@ -1,0 +1,450 @@
+@import "/leaflet/dist/leaflet.css";
+@namespace xlink "http://www.w3.org/1999/xlink";
+
+:root, dialog {
+	color: #393939;
+	background-color: #eeeeee;
+	font-size: min(calc(1vmin + 10px), 16px);
+}
+
+:root {
+	overflow-x: hidden;
+}
+
+dialog {
+	position: fixed;
+	border-style: none;
+	border-image: none;
+	padding: 0;
+	width: 100vw;
+	height: 100%;
+	bottom: 0;
+	z-index: 2;
+}
+
+dialog form {
+	display: block;
+	margin: 0 auto;
+	padding: 1rem;
+	width: 16rem;
+}
+
+:not(code) {
+	font-family: Roboto, Arial, sans-serif;
+}
+
+html, body {
+	position: absolute;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	display: inline-block;
+}
+
+nav, nav a, :target ~ nav a.default {
+	background: linear-gradient(90deg, #ffffff 0%, #9c9c9c 100%);
+}
+
+nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	list-style-type: none;
+	width: 5rem;
+	height: 100dvh;
+	position: fixed;
+	z-index: 1;
+}
+
+nav a, :target ~ nav a.default {
+	display: list-item;
+	margin: 0 auto;
+	border: 0.14rem solid #cecece;
+	border-radius: 0.4rem;
+	width: 4rem;
+	height: 4rem;
+}
+
+nav a:active,
+nav a.default,
+#book:target ~ nav a[href$="#book"],
+#map:target ~ nav a[href$="#map"],
+#home:target ~ nav a[href$="#home"],
+#artists:target ~ nav a[href$="#artists"],
+#profile:target ~ nav a[href$="#profile"] {
+	background: linear-gradient(270deg, #ffffff 0%, #9c9c9c 100%);
+}
+
+nav a svg {
+	display: block;
+	margin: 0.5rem auto 0;
+	width: 3rem;
+	height: 3rem;
+}
+
+nav a svg use, :target ~ nav a.default:not(:hover) svg use {
+	fill: #393939;
+}
+
+nav a:hover svg use,
+nav a.default svg use,
+#book:target ~ nav a[href$="#book"] svg use,
+#map:target ~ nav a[href$="#map"] svg use,
+#home:target ~ nav a[href$="#home"] svg use,
+#artists:target ~ nav a[href$="#artists"] svg use,
+#profile:target ~ nav a[href$="#profile"] svg use {
+	fill: #ff0000;
+}
+
+section {
+	position: relative;
+	width: calc(100dvw - 5rem);
+	left: 5rem;
+	z-index: 0;
+}
+
+section, :target ~ section.default {
+	display: none;
+}
+
+section.default,
+#book:target ~ section.book,
+#map:target ~ section.map,
+#home:target ~ section.home,
+#artists:target ~ section.artists,
+#profile:target ~ section.profile {
+	display: block;
+}
+
+section > * {
+	margin: 0 auto;
+	max-width: 85dvw;
+}
+
+#mapHolder {
+	max-width: initial;
+	height: 100dvh;
+}
+
+antenna-flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+antenna-frame, antenna-profile {
+	display: block;
+	background-color: #ffffff;
+	margin: 1rem auto;
+	padding: 1rem;
+	box-shadow: 0 0.13rem 0.25rem #000;
+}
+
+antenna-frame {
+	width: min(53.33dvmin, 20rem);
+}
+
+antenna-frame img {
+	width: min(53.33dvmin, 20rem);
+	height: min(53.33dvmin, 20rem);
+}
+
+antenna-profile img {
+	width: min(26.67dvmin, 10rem);
+	height: min(26.67dvmin, 10rem);
+	vertical-align: middle;
+}
+
+antenna-frame svg {
+	width: 1rem;
+	height: 1rem;
+}
+
+antenna-frame svg use {
+	fill: #393939;
+}
+
+@media (orientation: portrait) {
+	nav, nav a, :target ~ nav a.default {
+		background: linear-gradient(180deg, #ffffff 0%, #9c9c9c 100%);
+	}
+
+	nav {
+		flex-direction: row;
+		width: 100dvw;
+		height: 5rem;
+		top: calc(100dvh - 5rem);
+	}
+
+	nav a, :target ~ nav a.default {
+		margin: auto 0;
+	}
+
+	nav a:active,
+	nav a.default,
+	#book:target ~ nav a[href$="#book"],
+	#map:target ~ nav a[href$="#map"],
+	#home:target ~ nav a[href$="#home"],
+	#artists:target ~ nav a[href$="#artists"],
+	#profile:target ~ nav a[href$="#profile"] {
+		background: linear-gradient(0deg, #ffffff 0%, #9c9c9c 100%);
+	}
+
+	section {
+		width: 100dvw;
+		left: 0;
+	}
+
+	#mapHolder {
+		height: calc(100dvh - 5rem);
+	}
+	
+	antenna-frame:last-child {
+		margin-bottom: 11dvh;
+	}
+	
+	antenna-profile {
+		margin-bottom: 9dvh;
+	}
+}
+
+antenna-brief {
+	display: block;
+	margin: 0 1rem;
+	max-width: 48dvw;
+}
+
+antenna-flex > img {
+	align-self: center;
+}
+
+antenna-container {
+	margin: 0 1rem 1rem 0;
+}
+
+button svg {
+	display: block;
+	margin: 0 auto;
+	width: 1rem;
+	height: 1rem;
+}
+
+button svg use {
+	fill: white;
+}
+
+/*antenna-profile {
+	display: flex;
+	flex-wrap: wrap;
+	border: 1px solid black;
+	border-radius: 0.8rem;
+	padding: 0.8rem;
+}
+
+antenna-profile > * {
+	margin-right: 4rem;
+}
+
+antenna-brief * {
+	margin: 1rem;
+}
+
+img.account {
+	display: block;
+	border-radius: 0.4rem;
+	border-radius: 50%;
+	width: 7.5rem;
+	height: 7.5rem;
+}*/
+
+antenna-description {
+	display: block;
+	text-align: center;
+	font-style: italic;
+	width: 7.5rem;
+	border: none;
+	border-radius: 0.4rem;
+	padding: 0 0.2rem;
+	box-shadow: inset 0 0 0.25rem #000;
+}
+
+antenna-container {
+	display: block;
+}
+
+antenna-container * {
+	margin-bottom: 0.5rem;
+}
+
+antenna-item {
+	display: inline-block;
+	background-image: linear-gradient(#636363, #000000);
+	color: white;
+	text-align: center;
+	align-content: center;
+	border-radius: 1.75rem;
+	padding: 0 0.88rem;
+	min-width: 1.75rem;
+	min-height: 1.75rem;
+}
+
+antenna-box {
+	display: block;
+	border: none;
+	border-radius: 0.4rem;
+	padding: 0 0.2rem;
+	width: 14rem;
+	min-height: 1.75rem;
+	box-shadow: inset 0 0 0.25rem #000;
+}
+
+input, output, select, textarea {
+	background-color: #ffffff;
+}
+
+form label + input:not([type="checkbox"], [type="hidden"], [type="radio"]),
+form label + output,
+form label + select,
+form label + textarea {
+	display: block;
+}
+
+button, input:not([type="hidden"], [type="image"]), output, select, textarea {
+	border: none;
+	border-radius: 0.4rem;
+	padding: 0 0.2rem;
+	height: 1.75rem;
+	box-shadow: inset 0 0 0.25rem #000;
+}
+
+input:not([type="hidden"], [type="image"]), output, select, textarea {
+	width: 14rem;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	display: block;
+	appearance: none;
+	background-image: linear-gradient(#636363, #000000);
+	color: white;
+	font-weight: bold;
+	font-size: 1rem;
+	box-shadow: none;
+	min-width: 1.75em;
+}
+
+form button,
+form input[type="button"],
+form input[type="reset"],
+form input[type="submit"] {
+	margin: 1rem 0;
+	width: 14.4rem;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover {
+	background-image: linear-gradient(#a4a4a4, #000000);
+}
+
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active {
+	background-image: none;
+	background-color: #000000;
+}
+
+input[type="submit"] {
+	background-image: linear-gradient(#ff6363, #ff0000);
+}
+
+input[type="submit"]:hover {
+	background-image: linear-gradient(#ffa4a4, #ff0000);
+}
+
+input[type="submit"]:active {
+	background-image: none;
+	background-color: #ff0000;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	appearance: none;
+	margin: 0.1rem 0;
+	padding: 0;
+	width: 1.75rem;
+	vertical-align: middle;
+}
+
+input[type="radio"] {
+	border-radius: 50%;
+}
+
+input[type="checkbox"]:checked {
+	background: conic-gradient(
+		from 225deg at 58% 4%,
+		white 0%,
+		white 75%,
+		transparent 75%,
+		transparent 100%
+	),
+	conic-gradient(
+		from 45deg at 42% 79%,
+		white 0%,
+		white 75%,
+		transparent 75%,
+		transparent 100%
+	),
+	conic-gradient(
+		from 45deg at 42% 54%,
+		transparent 0%,
+		transparent 75%,
+		white 75%,
+		white 100%
+	);
+	background-color: black;
+}
+
+input[type="radio"]:checked {
+	background: radial-gradient(
+		circle,
+		black 0%,
+		black 33%,
+		transparent calc(33% + 1px),
+		transparent 100%
+	);
+}
+
+form input[type="checkbox"] + label,
+form input[type="radio"] + label {
+	vertical-align: middle;
+}
+
+form input[type="checkbox"] + label::after,
+form input[type="radio"] + label::after {
+	content: "\A";
+	white-space: pre;
+}
+
+#signUp [name="iAmA"]:not(:checked) ~ .signUpAll,
+#signUpIAmAnArtist:not(:checked) ~ .signUpArtist,
+#signUpIAmAProducer:not(:checked) ~ .signUpProducer,
+#signUpIAmAConcertgoer:not(:checked) ~ .signUpConcertgoer,
+#signUpIAmAConcertPromoter:not(:checked) ~ .signUpConcertPromoter,
+#signUpIAmAVenueHolder:not(:checked) ~ .signUpVenueHolder,
+#signUpIAmAnIndustryRepresentative:not(:checked) ~ .signUpIndustryRepresentative,
+#signUpICanProvideBackline:not(:checked) ~ .signUpBackline {
+	display: none;
+}
+
+#signUp [name="iAmA"]:checked ~ .signUpAll,
+#signUpIAmAnArtist:checked ~ .signUpArtist,
+#signUpIAmAProducer:checked ~ .signUpProducer,
+#signUpIAmAConcertgoer:checked ~ .signUpConcertgoer,
+#signUpIAmAConcertPromoter:checked ~ .signUpConcertPromoter,
+#signUpIAmAVenueHolder:checked ~ .signUpVenueHolder,
+#signUpIAmAnIndustryRepresentative:checked ~ .signUpIndustryRepresentative {
+	display: revert;
+}

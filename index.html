@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<!--
+		Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+			https://cordova.apache.org/docs/en/latest/
+		Some notes:
+			* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+			* Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+				* Enable inline JS: add 'unsafe-inline' to default-src
+		-->
+		<!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"/>-->
+		<meta name="format-detection" content="telephone=no"/>
+		<meta name="msapplication-tap-highlight" content="no"/>
+		<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover"/>
+		<meta name="color-scheme" content="light dark"/>
+		<link rel="stylesheet" href="css/index.css"/>
+		<title>Hello World</title>
+		<!--<script src="cordova.js"></script>-->
+		<script src="js/index.js"></script>
+	</head>
+	<body>
+		<antenna-declare id="book"></antenna-declare>
+		<antenna-declare id="map"></antenna-declare>
+		<antenna-declare id="home"></antenna-declare>
+		<antenna-declare id="artists"></antenna-declare>
+		<antenna-declare id="profile"></antenna-declare>
+		<nav>
+			<a href="#book">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+					<use xlink:href="img/open-iconic.svg#book"></use>
+				</svg>
+			</a>
+			<a href="#map">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+					<use xlink:href="img/open-iconic.svg#map"></use>
+				</svg>
+			</a>
+			<a href="#home" class="default">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+					<use xlink:href="img/open-iconic.svg#home"></use>
+				</svg>
+			</a>
+			<a href="#artists">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+					<use xlink:href="img/open-iconic.svg#musical-note"></use>
+				</svg>
+			</a>
+			<a href="#profile">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+					<use xlink:href="img/open-iconic.svg#person"></use>
+				</svg>
+			</a>
+		</nav>
+		<section class="book">
+			<antenna-flex>
+				<antenna-frame>
+					<img src="img/stage1.png"/>
+					<h3>Gulbenkian, University of Kent</h3>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#info"></use>
+					</svg>
+					<span>Venue</span>
+					<br/>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#map-marker"></use>
+					</svg>
+					<span>Kent, England, United Kingdom</span>
+					<br/>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#british-pound"></use>
+					</svg>
+					<span>23.00 per hour</span>
+				</antenna-frame>
+				<antenna-frame>
+					<img src="img/stage2.png"/>
+					<h3>Sheffield Lyceum</h3>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#info"></use>
+					</svg>
+					<span>Venue</span>
+					<br/>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#map-marker"></use>
+					</svg>
+					<span>Sheffield, England, United Kingdom</span>
+					<br/>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#british-pound"></use>
+					</svg>
+					<span>7.90 per hour</span>
+				</antenna-frame>
+				<antenna-frame>
+					<img src="img/room1.png"/>
+					<h3>Pirate Studios practice room</h3>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#info"></use>
+					</svg>
+					<span>Practice space</span>
+					<br/>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#map-marker"></use>
+					</svg>
+					<span>Anytown, USA</span>
+					<br/>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#dollar"></use>
+					</svg>
+					<span>Free</span>
+				</antenna-frame>
+			</antenna-flex>
+		</section>
+		<section class="map">
+			<div id="mapHolder"></div>
+		</section>
+		<section class="home default">
+			<antenna-flex>
+				<antenna-frame>
+					<img src="img/event1.png"/>
+					<h3>We Are The Champions Tour</h3>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#person"></use>
+					</svg>
+					<span>Freddie Mercury</span>
+					<br/>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#map-marker"></use>
+					</svg>
+					<span>Carnegie Hall, New York, NY, USA</span>
+				</antenna-frame>
+				<antenna-frame>
+					<img src="img/event2.png"/>
+					<h3>The Beatles @ Irving Plaza</h3>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#person"></use>
+					</svg>
+					<span>Ringo Starr</span>
+					<br/>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#map-marker"></use>
+					</svg>
+					<span>Irving Plaza, New York, NY, USA</span>
+				</antenna-frame>
+				<antenna-frame>
+					<img src="img/event3.png"/>
+					<h3>Ziggy Stardust and the Spiders from Mars</h3>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#person"></use>
+					</svg>
+					<span>David Bowie</span>
+					<br/>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#map-marker"></use>
+					</svg>
+					<span>Madison Square Garden, New York, NY, USA</span>
+				</antenna-frame>
+				<antenna-frame>
+					<img src="img/event4.png"/>
+					<h3>Alanis Morissette - Jagged Little Pill Tour</h3>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#person"></use>
+					</svg>
+					<span>Alanis Morissette</span>
+					<br/>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#map-marker"></use>
+					</svg>
+					<span>Capitol Theatre, Port Chester, NY, USA</span>
+				</antenna-frame>
+			</antenna-flex>
+		</section>
+		<section class="artists">
+			<antenna-flex>
+				<antenna-frame>
+					<img src="img/profile1.png"/>
+					<h3>Jerry Leiber</h3>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#info"></use>
+					</svg>
+					<span>Producer</span>
+				</antenna-frame>
+				<antenna-frame>
+					<img src="img/profile2.png"/>
+					<h3>Michael Stoller</h3>
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+						<use xlink:href="img/open-iconic.svg#info"></use>
+					</svg>
+					<span>Producer</span>
+				</antenna-frame>
+			</antenna-flex>
+		</section>
+		<section class="profile">
+			<antenna-profile>
+				<antenna-flex>
+					<img src="img/account.png"/>
+					<antenna-brief>
+						<h1>Wolfgang Amadeus Mozart</h1>
+						<em>Classically trained and world-renowned. 😜</em>
+					</antenna-brief>
+				</antenna-flex>
+				<antenna-flex>
+					<antenna-container>
+						<h2>Schedule Availability</h2>
+						<antenna-list>
+							<antenna-item>Monday</antenna-item>
+							<antenna-item>Tuesday</antenna-item>
+							<antenna-item>Wednesday</antenna-item>
+							<antenna-item>Thursday</antenna-item>
+							<antenna-item>Friday</antenna-item>
+						</antenna-list>
+						<button onclick="addDialog.show()">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+								<use xlink:href="img/open-iconic.svg#plus"></use>
+							</svg>
+						</button>
+					</antenna-container>
+					<antenna-container>
+						<h2>Instruments played</h2>
+						<antenna-list>
+							<antenna-item>Clavichord</antenna-item>
+							<antenna-item>Violin</antenna-item>
+						</antenna-list>
+						<button onclick="addDialog.show()">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+								<use xlink:href="img/open-iconic.svg#plus"></use>
+							</svg>
+						</button>
+					</antenna-container>
+					<antenna-container>
+						<h2>Genres/artists</h2>
+						<antenna-list>
+							<antenna-item>Classical</antenna-item>
+						</antenna-list>
+						<button onclick="addDialog.show()">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+								<use xlink:href="img/open-iconic.svg#plus"></use>
+							</svg>
+						</button>
+					</antenna-container>
+					<antenna-container>
+						<h2>Status</h2>
+						<antenna-box></antenna-box>
+						<button onclick="editDialog.show()">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+								<use xlink:href="img/open-iconic.svg#pencil"></use>
+							</svg>
+						</button>
+					</antenna-container>
+					<antenna-container>
+						<h2>Bands</h2>
+						<antenna-list></antenna-list>
+						<button onclick="addDialog.show()">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+								<use xlink:href="img/open-iconic.svg#plus"></use>
+							</svg>
+						</button>
+					</antenna-container>
+					<antenna-container>
+						<h2>Upcoming gigs</h2>
+						<antenna-list>
+							<antenna-item>Mon, Dec 8</antenna-item>
+						</antenna-list>
+						<button onclick="addDialog.show()">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+								<use xlink:href="img/open-iconic.svg#plus"></use>
+							</svg>
+						</button>
+					</antenna-container>
+					<antenna-container>
+						<h2>Music</h2>
+						<antenna-box></antenna-box>
+						<button onclick="editDialog.show()">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8 8">
+								<use xlink:href="img/open-iconic.svg#pencil"></use>
+							</svg>
+						</button>
+					</antenna-container>
+				</antenna-flex>
+			</antenna-profile>
+			<br/>
+		</section>
+		<!--<dialog open="open">-->
+		<dialog>
+			<form id="login" method="dialog">
+				<h1>Welcome</h1>
+				<input type="hidden" name="form" value="login"/>
+				<label for="loginUserName">User name</label>
+				<input type="text" id="loginUserName" name="userName"/>
+				<label for="loginPassword">Password</label>
+				<input type="password" id="loginPassword" name="password"/>
+				<input type="submit" value="Log in"/>
+				<button>Sign up</button>
+			</form>
+		</dialog>
+		<dialog id="addDialog">
+			<form id="add" method="dialog" onsubmit="addToList()">
+				<h1>Add item</h1>
+				<input type="text" id="addItem" name="item"/>
+				<input type="submit" value="OK"/>
+			</form>
+		</dialog>
+		<dialog id="editDialog">
+			<form id="edit" method="dialog" onsubmit="editBox()">
+				<h1>Edit</h1>
+				<textarea id="editContent" name="content"></textarea>
+				<input type="submit" value="OK"/>
+			</form>
+		</dialog>
+	</body>
+</html>
