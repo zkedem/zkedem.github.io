@@ -1,5 +1,5 @@
 if (localStorage.userName != "mozart" && localStorage.passwd != "1234") {
-	loginDialog.show();
+	//loginDialog.show();
 }
 
 function login() {
