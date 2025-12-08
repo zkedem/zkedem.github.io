@@ -1,8 +1,11 @@
 @import "/leaflet/dist/leaflet.css";
 @namespace xlink "http://www.w3.org/1999/xlink";
 
-:root, dialog {
+* {
 	color: #393939;
+}
+
+:root, dialog {
 	background-color: #eeeeee;
 	font-size: min(calc(1vmin + 10px), 16px);
 }
