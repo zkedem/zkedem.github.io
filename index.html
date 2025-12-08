@@ -281,9 +281,8 @@
 			</antenna-profile>
 			<br/>
 		</section>
-		<!--<dialog open="open">-->
-		<dialog>
-			<form id="login" method="dialog">
+		<dialog id="loginDialog">
+			<form id="login" onsubmit="login()">
 				<h1>Welcome</h1>
 				<input type="hidden" name="form" value="login"/>
 				<label for="loginUserName">User name</label>
@@ -291,7 +290,95 @@
 				<label for="loginPassword">Password</label>
 				<input type="password" id="loginPassword" name="password"/>
 				<input type="submit" value="Log in"/>
-				<button>Sign up</button>
+				<button onclick="signUpDialog.show()">Sign up</button>
+			</form>
+		</dialog>
+		<dialog id="signUpDialog">
+			<form id="signUp">
+				<input type="hidden" name="form" value="signUp"/>
+				<label for="signUpUserName">User name</label>
+				<input type="text" id="signUpUserName" name="userName"/>
+				<label for="signUpPhone">Phone</label>
+				<input type="tel" id="signUpPhone" name="phone"/>
+				<label for="signUpPhone">Email</label>
+				<input type="text" id="signUpEmail" name="email"/>
+				<label for="signUpPassword">Password</label>
+				<input type="password" id="signUpPassword" name="password"/>
+				<label for="signUpBirthday">Birthday</label>
+				<input type="date" id="signUpBirthday" name="birthday"/>
+				<label for="signUpAddress">Address</label>
+				<input type="text" id="signUpAddress" name="address"/>
+				<input type="radio" id="signUpIAmAnArtist" name="iAmA" value="artist"/>
+				<label for="signUpIAmAnArtist">I am an artist</label>
+				<input type="radio" id="signUpIAmAProducer" name="iAmA" value="producer"/>
+				<label for="signUpIAmAProducer">I am a producer</label>
+				<input type="radio" id="signUpIAmAConcertgoer" name="iAmA" value="concertgoer"/>
+				<label for="signUpIAmAConcertgoer">I am a concertgoer</label>
+				<input type="radio" id="signUpIAmAConcertPromoter" name="iAmA" value="concertPromoter"/>
+				<label for="signUpIAmAConcertPromoter">I am a concert promoter</label>
+				<input type="radio" id="signUpIAmAVenueHolder" name="iAmA" value="venueHolder"/>
+				<label for="signUpIAmAVenueHolder">I am a venue holder</label>
+				<input type="radio" id="signUpIAmAnIndustryRepresentative" name="iAmA" value="industryRepresentative"/>
+				<label for="signUpIAmAnIndustryRepresentative">I am an industry representative</label>
+				<div class="signUpArtist signUpProducer signUpConcertgoer signUpConcertPromoter">
+					<label for="signUpGenres">Genres</label>
+					<input type="text" id="signUpGenres" name="genres"/>
+				</div>
+				<div class="signUpArtist">
+					<label for="signUpInstrumentsAndVocals">Instruments and vocals</label>
+					<input type="text" id="signUpInstrumentsAndVocals" name="instrumentsAndVocals"/>
+					<label for="signUpAdditionalExperience">Additional experience</label>
+					<input type="text" id="signUpAdditionalExperience" name="additionalExperience"/>
+				</div>
+				<div class="signUpProducer">
+					<label for="signUpBandsILike">Studio address</label>
+					<input type="text" id="signUpStudioAddress" name="studioAddress"/>
+				</div>
+				<div class="signUpConcertgoer">
+					<label for="signUpBandsILike">Bands I like</label>
+					<input type="text" id="signUpBandsILike" name="bandsILike"/>
+				</div>
+				<div class="signUpConcertPromoter">
+					<span>To-do: past experience or resume</span>
+				</div>
+				<div class="signUpVenueHolder">
+					<label for="signUpVenueAddress">Venue address</label>
+					<input type="text" id="signUpVenueAddress" name="venueAddress"/>
+					<fieldset>
+						<legend>My venue is</legend>
+						<input type="radio" id="signUpmyVenueIsAnEstablishedVenue" name="myVenueIs" value="anEstablishedVenue"/>
+						<label for="signUpmyVenueIsAnEstablishedVenue">an established venue</label>
+						<input type="radio" id="signUpmyVenueIsAGuerillaVenue" name="myVenueIs" value="aGuerillaVenue"/>
+						<label for="signUpmyVenueIsAGuerillaVenue">a guerilla venue</label>
+					</fieldset>
+					<fieldset>
+						<legend>I offer</legend>
+						<input type="radio" id="signUpIOfferPerformanceSpace" name="iOffer" value="performanceSpace"/>
+						<label for="signUpIOfferPerformanceSpace">performance space</label>
+						<input type="radio" id="signUpIOfferPracticeSpace" name="iOffer" value="practiceSpace"/>
+						<label for="signUpIOfferPracticeSpace">practice space</label>
+						<input type="radio" id="signUpIOfferBoth" name="iOffer" value="both"/>
+						<label for="signUpIOfferBoth">both</label>
+					</fieldset>
+				</div>
+				<div class="signUpProducer signUpVenueHolder">
+					<label for="signUpHourlyRate">Hourly rate</label>
+					<input type="number" id="signUpHourlyRate" name="hourlyRate" min="0.01" step="0.01"/>
+				</div>
+				<div class="signUpVenueHolder">
+					<input type="checkbox" id="signUpICanProvideBackline"/>
+					<label for="signUpICanProvideBackline">I can provide backline</label>
+					<div class="signUpBackline">
+						<label for="signUpBacklineEquipment">Equipment</label>
+						<input type="text" id="signUpBacklineEquipment" name="equipment"/>
+					</div>
+					<span>To-do: ID</span>
+				</div>
+				<div class="signUpAll">
+					<span>To-do: offer to scan and sync music library</span>
+				</div>
+				<input type="submit" value="Create account"/>
+				<button onclick="signUpDialog.hide()">Go back</button>
 			</form>
 		</dialog>
 		<dialog id="addDialog">
