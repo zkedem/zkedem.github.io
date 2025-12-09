@@ -2,6 +2,12 @@ function include(src) {
 	document.head.appendChild(document.createElement("script")).setAttribute("src", src);
 }
 
+function includeModule(src) {
+	var child = document.head.appendChild(document.createElement("script"));
+	child.setAttribute("type", "module");
+	child.setAttribute("src", src);
+}
+
 /*function onDeviceReady() {
     // Cordova is now initialized. Have fun!
 
@@ -13,5 +19,5 @@ function include(src) {
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 document.addEventListener('deviceready', onDeviceReady, false);*/
 include("js/login.js");
-include("js/map.js");
+includeModule("js/map.js");
 include("js/profile.js");
